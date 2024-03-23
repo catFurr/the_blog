@@ -1,0 +1,1360 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        />
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            white: "#fff",
+                            gray1: {
+                            "100": "#1a1a1a",
+                            "200": "#090d1f",
+                            "300": "rgba(0, 0, 0, 0.34)",
+                            },
+                            whitesmoke: "#eaecf0",
+                            "gray-500": "#667085",
+                            ghostwhite: {
+                            "100": "#f8f9fc",
+                            "200": "#f9f5ff",
+                            },
+                            "primary-600": "#7e56d9",
+                            "pink-50": "#fdf2fa",
+                            "pink-700": "#c11574",
+                            darkslateblue: "#363e72",
+                            slateblue: "#6941c6",
+                            lavenderblush: "#fff1f3",
+                            crimson: "#c11048",
+                            honeydew: "#ecfdf3",
+                            seagreen: "#037a48",
+                            aliceblue: {
+                            "100": "#f0f9ff",
+                            "200": "#eef4ff",
+                            },
+                            darkblue: "#3538cd",
+                            seashell: "#fff6ed",
+                            firebrick: "#c4320a",
+                            steelblue: "#026aa2",
+                            "gray-300": "#d0d5dd",
+                            "gray-700": "#344154",
+                            "gray-900": "#101828",
+                        },
+                        spacing: {},
+                        fontFamily: {
+                            "text-sm-medium": "Inter",
+                        },
+                    },
+                    fontSize: {
+                        xl: "20px",
+                        base: "16px",
+                        sm: "14px",
+                        "5xl": "24px",
+                        lgi: "19px",
+                        lg: "18px",
+                        "29xl": "48px",
+                        inherit: "inherit",
+                    },
+                    screens: {
+                    lg: {
+                        max: "1200px",
+                    },
+                    mq1050: {
+                        raw: "screen and (max-width: 1050px)",
+                    },
+                    mq750: {
+                        raw: "screen and (max-width: 750px)",
+                    },
+                    mq450: {
+                        raw: "screen and (max-width: 450px)",
+                    },
+                    },
+                },
+                corePlugins: {
+                    preflight: false,
+                },
+                content: ["./*.{html,js}", "./!(build|dist|.*)/**/*.{html,js}"],
+            }
+        </script>
+        <style type="text/tailwindcss">
+            /* @tailwind base;
+            @tailwind components;
+            @tailwind utilities;
+            body {
+                    @apply leading-[normal] m-0;
+                }
+                *,
+                ::before,
+                ::after {
+                border-width: 0;
+            } */
+            @layer utilities {
+                .content-auto {
+                    content-visibility: auto;
+                }
+            }
+        </style>
+        <title>
+            THE BLOG - by catfurr
+        </title>
+    </head>
+</html>
+  <body>
+    <div
+      class="w-full relative bg-white overflow-hidden flex flex-col items-start justify-start tracking-[normal]"
+    >
+      <section
+        class="self-stretch bg-white flex flex-col items-center justify-center py-[30px] px-5 box-border gap-[50px] max-w-full text-left text-[243.8px] text-gray1-100 font-text-sm-medium mq750:gap-[25px_50px] mq450:pt-5 mq450:pb-5 mq450:box-border"
+      >
+        <header
+          class="w-[1216px] flex flex-row items-center justify-between py-2.5 px-0 box-border top-[0] z-[99] sticky gap-[20px] max-w-full text-left text-xl text-gray1-100 font-text-sm-medium mq750:w-[720px]"
+        >
+          <h3
+            class="m-0 w-[131px] relative text-inherit leading-[24px] font-semibold font-inherit inline-block shrink-0 whitespace-nowrap"
+          >
+            Your Name
+          </h3>
+          <div
+            class="flex flex-row items-start justify-start gap-[14px] max-w-full mq750:hidden"
+          >
+            <div class="flex flex-row items-start justify-start p-2">
+              <h3
+                class="m-0 relative text-inherit leading-[24px] font-normal font-inherit inline-block min-w-[42px]"
+              >
+                Blog
+              </h3>
+            </div>
+            <div class="flex flex-row items-start justify-start p-2">
+              <h3
+                class="m-0 relative text-inherit leading-[24px] font-normal font-inherit inline-block min-w-[77px]"
+              >
+                Projects
+              </h3>
+            </div>
+            <div class="flex flex-row items-start justify-start p-2">
+              <h3
+                class="m-0 relative text-inherit leading-[24px] font-normal font-inherit inline-block min-w-[57px]"
+              >
+                About
+              </h3>
+            </div>
+            <div class="flex flex-row items-start justify-start p-2">
+              <h3
+                class="m-0 relative text-inherit leading-[24px] font-normal font-inherit inline-block min-w-[104px]"
+              >
+                Newsletter
+              </h3>
+            </div>
+            <div
+              class="h-10 rounded-[29px] bg-gray1-200 flex flex-row items-start justify-start py-2 px-4 box-border gap-[16px]"
+            >
+              <img
+                class="h-6 w-6 relative min-h-[24px]"
+                loading="lazy"
+                alt=""
+                src="/public/iconoutlinesun.svg"
+              />
+
+              <div
+                class="h-6 w-6 rounded-[20px] bg-white flex flex-row items-start justify-start"
+              >
+                <img class="h-6 w-6 relative" loading="lazy" alt="" />
+              </div>
+            </div>
+          </div>
+        </header>
+        <div
+          class="w-[1216px] box-border flex flex-row items-start justify-start py-0 px-0 max-w-full border-t-[1px] border-solid border-gray1-300 border-b-[1px] lg:gap-[260px_130px] mq750:gap-[260px_65px] mq450:gap-[260px_32px]"
+        >
+          <b
+            class="flex-1 relative inline-block max-w-full shrink-0 mq1050:text-[98px] mq450:text-[61px]"
+            >THE BLOG</b
+          >
+        </div>
+      </section>
+      <section
+        class="self-stretch bg-white flex flex-col items-center justify-start py-24 px-20 box-border max-w-full text-center text-base text-primary-600 font-text-sm-medium mq750:gap-[32px_64px] mq750:py-[62px] mq750:px-10 mq750:box-border mq450:gap-[16px_64px]"
+      >
+        <div
+          class="self-stretch flex flex-col items-center justify-start py-0 px-8 box-border max-w-full mq750:gap-[16px_32px]"
+        >
+          <div
+            class="self-stretch flex flex-col items-center justify-start py-0 px-5 box-border gap-[40px] max-w-full mq750:gap-[20px_40px]"
+          >
+            <div
+              class="w-[960px] flex flex-col items-center justify-start gap-[24px] max-w-full"
+            >
+              <div
+                class="self-stretch flex flex-col items-start justify-start gap-[12px]"
+              >
+                <div class="self-stretch relative leading-[24px] font-semibold">
+                  Our blog
+                </div>
+                <h1
+                  class="m-0 self-stretch relative text-29xl tracking-[-0.02em] leading-[60px] font-semibold font-inherit text-gray-900 mq1050:text-[38px] mq1050:leading-[48px] mq450:text-[29px] mq450:leading-[36px]"
+                >
+                  Stories and interviews
+                </h1>
+              </div>
+              <h3
+                class="m-0 w-[768px] relative text-xl leading-[30px] font-normal font-inherit text-gray-500 inline-block max-w-full mq450:text-base mq450:leading-[24px]"
+              >
+                Subscribe to learn about new product features, the latest in
+                technology, solutions, and updates.
+              </h3>
+            </div>
+            <div
+              class="w-[494px] flex flex-row flex-wrap items-start justify-start gap-[16px] max-w-full text-left text-sm text-gray-700"
+            >
+              <div
+                class="flex-1 flex flex-col items-start justify-start min-w-[234px] max-w-full"
+              >
+                <div
+                  class="self-stretch flex flex-col items-start justify-start gap-[8px] max-w-full"
+                >
+                  <div
+                    class="self-stretch flex flex-col items-start justify-start gap-[6px] max-w-full"
+                  >
+                    <div class="w-9 relative leading-[20px] font-medium hidden">
+                      Email
+                    </div>
+                    <div
+                      class="self-stretch rounded-lg bg-white shadow-[0px_1px_2px_rgba(16,_24,_40,_0.05)] box-border overflow-hidden flex flex-row items-center justify-start py-3 pr-[13px] pl-[15px] gap-[8px] max-w-full border-[1px] border-solid border-gray-300"
+                    >
+                      <input
+                        class="w-full [border:none] [outline:none] bg-[transparent] h-6 flex-1 flex flex-row items-center justify-start font-text-sm-medium text-base text-gray-500 min-w-[198px] max-w-full"
+                        placeholder="Enter your email"
+                        type="text"
+                      />
+
+                      <img
+                        class="h-4 w-4 relative hidden"
+                        alt=""
+                        src="/public/help-icon.svg"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="self-stretch relative leading-[20px] text-gray-500"
+                  >
+                    We care about your data in our
+                    <span class="[text-decoration:underline]"
+                      >privacy policy</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <button
+                class="cursor-pointer [border:none] p-0 bg-[transparent] rounded-lg flex flex-row items-start justify-start"
+              >
+                <div
+                  class="rounded-lg bg-primary-600 shadow-[0px_1px_2px_rgba(16,_24,_40,_0.05)] overflow-hidden flex flex-row items-center justify-center py-3 px-[19px] border-[1px] border-solid border-primary-600"
+                >
+                  <div
+                    class="relative text-base leading-[24px] font-medium font-text-sm-medium text-white text-left inline-block min-w-[78px]"
+                  >
+                    Subscribe
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="self-stretch bg-white flex flex-col items-center justify-start py-[30px] px-20 box-border max-w-full text-left text-5xl text-gray1-100 font-text-sm-medium mq750:gap-[32px_64px] mq750:py-5 mq750:px-10 mq750:box-border mq450:gap-[16px_64px]"
+      >
+        <div
+          class="self-stretch flex flex-col items-start justify-start py-0 px-8 box-border gap-[32px] max-w-full mq750:gap-[16px_32px]"
+        >
+          <h2
+            class="m-0 self-stretch relative text-inherit leading-[32px] font-semibold font-inherit mq450:text-lgi mq450:leading-[26px]"
+          >
+            Recent blog posts
+          </h2>
+          <div
+            class="self-stretch flex flex-row flex-wrap items-start justify-start gap-[32px] max-w-full text-sm text-slateblue mq750:gap-[16px]"
+          >
+            <div
+              class="flex-1 flex flex-col items-start justify-start gap-[32px] min-w-[385px] max-w-full mq750:gap-[16px_32px] mq750:min-w-full"
+            >
+              <img
+                class="self-stretch h-[228px] relative max-w-full overflow-hidden shrink-0 object-cover"
+                loading="lazy"
+                alt=""
+                src="/public/image@2x.png"
+              />
+
+              <div
+                class="self-stretch flex flex-col items-start justify-start gap-[24px] max-w-full"
+              >
+                <div
+                  class="self-stretch flex flex-col items-start justify-start gap-[12px] max-w-full"
+                >
+                  <div
+                    class="self-stretch relative leading-[20px] font-semibold"
+                  >
+                    Olivia Rhye • 1 Jan 2023
+                  </div>
+                  <div
+                    class="self-stretch flex flex-row items-start justify-start gap-[16px] max-w-full text-5xl text-gray1-100 mq750:flex-wrap"
+                  >
+                    <h2
+                      class="m-0 flex-1 relative text-inherit leading-[32px] font-semibold font-inherit inline-block min-w-[225px] max-w-full mq450:text-lgi mq450:leading-[26px]"
+                    >
+                      UX review presentations
+                    </h2>
+                    <div
+                      class="h-7 flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border"
+                    >
+                      <img
+                        class="w-6 h-6 relative overflow-hidden shrink-0"
+                        loading="lazy"
+                        alt=""
+                        src="/public/arrowupright.svg"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="self-stretch relative text-base leading-[24px] text-gray-500"
+                  >
+                    How do you create compelling presentations that wow your
+                    colleagues and impress your managers?
+                  </div>
+                </div>
+                <div
+                  class="self-stretch flex flex-row items-start justify-start py-0 pr-80 pl-0 gap-[8px] text-center mq750:flex-wrap mq750:pr-40 mq750:box-border mq450:pr-5 mq450:box-border"
+                >
+                  <div
+                    class="flex flex-row items-start justify-start mix-blend-multiply"
+                  >
+                    <div
+                      class="rounded-2xl bg-ghostwhite-200 flex flex-row items-center justify-center py-0.5 px-2.5"
+                    >
+                      <div
+                        class="w-[47px] relative leading-[20px] font-medium inline-block min-w-[47px]"
+                      >
+                        Design
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-row items-start justify-start mix-blend-multiply text-darkblue"
+                  >
+                    <div
+                      class="rounded-2xl bg-aliceblue-200 flex flex-row items-center justify-center py-0.5 px-2.5"
+                    >
+                      <div
+                        class="w-[63px] relative leading-[20px] font-medium inline-block min-w-[63px]"
+                      >
+                        Research
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-row items-start justify-start mix-blend-multiply text-pink-700"
+                  >
+                    <div
+                      class="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5"
+                    >
+                      <div
+                        class="w-[86px] relative leading-[20px] font-medium inline-block min-w-[86px]"
+                      >
+                        Presentation
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex-1 flex flex-col items-start justify-center gap-[32px] min-w-[385px] max-w-full mq750:gap-[16px_32px] mq750:min-w-full"
+            >
+              <div
+                class="self-stretch flex flex-row items-start justify-start gap-[24px] mq750:flex-wrap"
+              >
+                <img
+                  class="h-[200px] w-80 relative overflow-hidden shrink-0 object-cover mq750:flex-1"
+                  alt=""
+                  src="/public/image-1@2x.png"
+                />
+
+                <div
+                  class="w-[248px] flex flex-col items-start justify-start gap-[24px] min-w-[161px]"
+                >
+                  <div
+                    class="self-stretch flex flex-col items-start justify-start gap-[12px]"
+                  >
+                    <div
+                      class="self-stretch relative leading-[20px] font-semibold"
+                    >
+                      Phoenix Baker • 1 Jan 2023
+                    </div>
+                    <div
+                      class="self-stretch flex flex-col items-start justify-start gap-[8px] text-lg text-gray1-100"
+                    >
+                      <div
+                        class="self-stretch relative leading-[28px] font-semibold"
+                      >
+                        Migrating to Linear 101
+                      </div>
+                      <div
+                        class="self-stretch relative text-base leading-[24px] text-gray-500"
+                      >
+                        Linear helps streamline software projects, sprints,
+                        tasks, and bug tracking. Here’s how to get...
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="self-stretch flex flex-row items-start justify-start py-0 pr-[90px] pl-0 gap-[8px] text-center text-steelblue mq450:flex-wrap"
+                  >
+                    <div
+                      class="flex flex-row items-start justify-start mix-blend-multiply"
+                    >
+                      <div
+                        class="rounded-2xl bg-aliceblue-100 flex flex-row items-center justify-center py-0.5 px-2.5"
+                      >
+                        <div
+                          class="w-[47px] relative leading-[20px] font-medium inline-block min-w-[47px]"
+                        >
+                          Design
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-row items-start justify-start mix-blend-multiply text-pink-700"
+                    >
+                      <div
+                        class="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5"
+                      >
+                        <div
+                          class="w-[63px] relative leading-[20px] font-medium inline-block min-w-[63px]"
+                        >
+                          Research
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="self-stretch flex flex-row items-start justify-start gap-[24px] mq750:flex-wrap"
+              >
+                <img
+                  class="h-[200px] w-80 relative overflow-hidden shrink-0 object-cover mq750:flex-1"
+                  alt=""
+                  src="/public/image-2@2x.png"
+                />
+
+                <div
+                  class="w-[248px] flex flex-col items-start justify-start gap-[24px] min-w-[161px]"
+                >
+                  <div
+                    class="self-stretch flex flex-col items-start justify-start gap-[12px]"
+                  >
+                    <div
+                      class="self-stretch relative leading-[20px] font-semibold"
+                    >
+                      Lana Steiner • 1 Jan 2023
+                    </div>
+                    <div
+                      class="self-stretch flex flex-col items-start justify-start gap-[8px] text-lg text-gray1-100"
+                    >
+                      <div
+                        class="self-stretch relative leading-[28px] font-semibold"
+                      >
+                        Building your API Stack
+                      </div>
+                      <div
+                        class="self-stretch relative text-base leading-[24px] text-gray-500"
+                      >
+                        The rise of RESTful APIs has been met by a rise in tools
+                        for creating, testing, and manag...
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="self-stretch flex flex-row items-start justify-start py-0 pr-[90px] pl-0 gap-[8px] text-center text-seagreen mq450:flex-wrap"
+                  >
+                    <div
+                      class="flex flex-row items-start justify-start mix-blend-multiply"
+                    >
+                      <div
+                        class="rounded-2xl bg-honeydew flex flex-row items-center justify-center py-0.5 px-2.5"
+                      >
+                        <div
+                          class="w-[47px] relative leading-[20px] font-medium inline-block min-w-[47px]"
+                        >
+                          Design
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-row items-start justify-start mix-blend-multiply text-pink-700"
+                    >
+                      <div
+                        class="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5"
+                      >
+                        <div
+                          class="w-[63px] relative leading-[20px] font-medium inline-block min-w-[63px]"
+                        >
+                          Research
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="self-stretch flex flex-row items-start justify-start pt-0 px-0 pb-[30px] box-border max-w-full text-left text-sm text-slateblue font-text-sm-medium"
+      >
+        <div
+          class="flex-1 bg-white flex flex-col items-center justify-start py-[30px] px-20 box-border max-w-full mq750:gap-[32px_64px] mq750:pl-10 mq750:pr-10 mq750:box-border mq450:gap-[16px_64px]"
+        >
+          <div
+            class="self-stretch flex flex-col items-start justify-start py-0 px-8 box-border max-w-full mq750:gap-[16px_32px]"
+          >
+            <div
+              class="self-stretch flex flex-row items-start justify-start max-w-full mq750:gap-[32px_16px]"
+            >
+              <div
+                class="flex-1 flex flex-row flex-wrap items-start justify-start gap-[32px] max-w-full mq750:gap-[16px]"
+              >
+                <img
+                  class="h-[246px] flex-1 relative max-w-full overflow-hidden object-cover min-w-[385px] min-h-[246px] mq750:min-w-full"
+                  alt=""
+                  src="/public/image-3@2x.png"
+                />
+
+                <div
+                  class="flex-1 flex flex-col items-start justify-start gap-[24px] min-w-[385px] max-w-full mq750:min-w-full"
+                >
+                  <div
+                    class="self-stretch flex flex-col items-start justify-start gap-[12px] max-w-full"
+                  >
+                    <div
+                      class="self-stretch relative leading-[20px] font-semibold"
+                    >
+                      Olivia Rhye • 1 Jan 2023
+                    </div>
+                    <div
+                      class="self-stretch flex flex-row items-start justify-start gap-[16px] max-w-full text-5xl text-gray1-100 mq750:flex-wrap"
+                    >
+                      <h2
+                        class="m-0 flex-1 relative text-inherit leading-[32px] font-semibold font-inherit inline-block min-w-[359px] max-w-full mq750:min-w-full mq450:text-lgi mq450:leading-[26px]"
+                      >
+                        Grid system for better Design User Interface
+                      </h2>
+                      <div
+                        class="h-7 flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border"
+                      >
+                        <img
+                          class="w-6 h-6 relative overflow-hidden shrink-0"
+                          alt=""
+                          src="/public/arrowupright.svg"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="self-stretch relative text-base leading-[24px] text-gray-500"
+                    >
+                      A grid system is a design tool used to arrange content on
+                      a webpage. It is a series of vertical and horizontal lines
+                      that create a matrix of intersecting points, which can be
+                      used to align and organize page elements. Grid systems are
+                      used to create a consistent look and feel across a
+                      website, and can help to make the layout more visually
+                      appealing and easier to navigate.
+                    </div>
+                  </div>
+                  <div
+                    class="self-stretch flex flex-row items-start justify-start py-0 pr-[436px] pl-0 gap-[8px] text-center mq750:flex-wrap mq750:pr-[218px] mq750:box-border mq450:pr-5 mq450:box-border"
+                  >
+                    <div
+                      class="flex flex-row items-start justify-start mix-blend-multiply"
+                    >
+                      <div
+                        class="rounded-2xl bg-ghostwhite-200 flex flex-row items-center justify-center py-0.5 px-2.5"
+                      >
+                        <div
+                          class="w-[47px] relative leading-[20px] font-medium inline-block min-w-[47px]"
+                        >
+                          Design
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-row items-start justify-start mix-blend-multiply text-pink-700"
+                    >
+                      <div
+                        class="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5"
+                      >
+                        <div
+                          class="w-[61px] relative leading-[20px] font-medium inline-block min-w-[61px]"
+                        >
+                          Interface
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="self-stretch flex flex-row items-start justify-center pt-0 px-5 pb-[30px] box-border max-w-full text-left text-5xl text-gray1-100 font-text-sm-medium"
+      >
+        <div
+          class="w-[1216px] flex flex-col items-start justify-start gap-[30px] max-w-full"
+        >
+          <div
+            class="self-stretch flex flex-col items-start justify-start gap-[32px] shrink-0 max-w-full mq750:gap-[16px_32px]"
+          >
+            <h2
+              class="m-0 self-stretch relative text-inherit leading-[32px] font-semibold font-inherit mq450:text-lgi mq450:leading-[26px]"
+            >
+              All blog posts
+            </h2>
+            <div
+              class="self-stretch flex flex-col items-start justify-start gap-[48px] max-w-full text-sm text-slateblue mq750:gap-[24px_48px]"
+            >
+              <div
+                class="self-stretch grid flex-row items-start justify-center gap-[32px] max-w-full grid-cols-[repeat(3,_minmax(288px,_1fr))] mq750:gap-[32px_16px] mq750:grid-cols-[minmax(288px,_1fr)] mq1050:justify-center mq1050:grid-cols-[repeat(2,_minmax(288px,_499px))]"
+              >
+                <div
+                  class="flex flex-col items-start justify-start gap-[32px] max-w-full mq450:gap-[16px_32px]"
+                >
+                  <img
+                    class="self-stretch h-60 relative max-w-full overflow-hidden shrink-0 object-cover"
+                    alt=""
+                    src="/public/image-4@2x.png"
+                  />
+
+                  <div
+                    class="self-stretch flex flex-col items-start justify-start gap-[24px]"
+                  >
+                    <div
+                      class="self-stretch flex flex-col items-start justify-start gap-[12px]"
+                    >
+                      <div
+                        class="self-stretch relative leading-[20px] font-semibold"
+                      >
+                        Alec Whitten • 1 Jan 2023
+                      </div>
+                      <div
+                        class="self-stretch flex flex-row items-start justify-start gap-[16px] text-5xl text-gray1-100"
+                      >
+                        <h2
+                          class="m-0 relative text-inherit leading-[32px] font-semibold font-inherit mq450:text-lgi mq450:leading-[26px]"
+                        >
+                          Bill Walsh leadership lessons
+                        </h2>
+                        <div
+                          class="h-7 flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border"
+                        >
+                          <img
+                            class="w-6 h-6 relative overflow-hidden shrink-0"
+                            alt=""
+                            src="/public/arrowupright.svg"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch relative text-base leading-[24px] text-gray-500"
+                      >
+                        Like to know the secrets of transforming a 2-14 team
+                        into a 3x Super Bowl winning Dynasty?
+                      </div>
+                    </div>
+                    <div
+                      class="self-stretch flex flex-row items-start justify-start py-0 pr-[173px] pl-0 gap-[8px] text-center mq450:flex-wrap mq450:pr-5 mq450:box-border"
+                    >
+                      <div
+                        class="flex flex-row items-start justify-start mix-blend-multiply"
+                      >
+                        <div
+                          class="rounded-2xl bg-ghostwhite-200 flex flex-row items-center justify-center py-0.5 px-2.5"
+                        >
+                          <div
+                            class="w-[75px] relative leading-[20px] font-medium inline-block min-w-[75px]"
+                          >
+                            Leadership
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-row items-start justify-start mix-blend-multiply text-darkslateblue"
+                      >
+                        <div
+                          class="rounded-2xl bg-ghostwhite-100 flex flex-row items-center justify-center py-0.5 px-2.5"
+                        >
+                          <div
+                            class="w-[88px] relative leading-[20px] font-medium inline-block min-w-[88px]"
+                          >
+                            Management
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="hidden flex-row items-start justify-start mix-blend-multiply text-pink-700"
+                      >
+                        <div
+                          class="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5"
+                        >
+                          <div class="relative leading-[20px] font-medium">
+                            Presentation
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col items-start justify-start gap-[32px] max-w-full mq450:gap-[16px_32px]"
+                >
+                  <img
+                    class="self-stretch h-60 relative max-w-full overflow-hidden shrink-0 object-cover"
+                    alt=""
+                    src="/public/image-5@2x.png"
+                  />
+
+                  <div
+                    class="self-stretch flex flex-col items-start justify-start gap-[24px] max-w-full"
+                  >
+                    <div
+                      class="self-stretch flex flex-col items-start justify-start gap-[12px] max-w-full"
+                    >
+                      <div
+                        class="self-stretch relative leading-[20px] font-semibold"
+                      >
+                        Demi WIlkinson • 1 Jan 2023
+                      </div>
+                      <div
+                        class="self-stretch flex flex-row items-start justify-start gap-[16px] max-w-full text-5xl text-gray1-100 mq450:flex-wrap"
+                      >
+                        <h2
+                          class="m-0 flex-1 relative text-inherit leading-[32px] font-semibold font-inherit inline-block min-w-[169px] max-w-full mq450:text-lgi mq450:leading-[26px]"
+                        >
+                          PM mental models
+                        </h2>
+                        <div
+                          class="h-7 flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border"
+                        >
+                          <img
+                            class="w-6 h-6 relative overflow-hidden shrink-0"
+                            alt=""
+                            src="/public/arrowupright.svg"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch relative text-base leading-[24px] text-gray-500"
+                      >
+                        Mental models are simple expressions of complex
+                        processes or relationships.
+                      </div>
+                    </div>
+                    <div
+                      class="self-stretch flex flex-row items-start justify-start py-0 pr-[109px] pl-0 gap-[8px] text-center text-steelblue mq450:flex-wrap mq450:pr-5 mq450:box-border"
+                    >
+                      <div
+                        class="flex flex-row items-start justify-start mix-blend-multiply"
+                      >
+                        <div
+                          class="rounded-2xl bg-aliceblue-100 flex flex-row items-center justify-center py-0.5 px-2.5"
+                        >
+                          <div
+                            class="w-[53px] relative leading-[20px] font-medium inline-block min-w-[53px]"
+                          >
+                            Product
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-row items-start justify-start mix-blend-multiply text-darkblue"
+                      >
+                        <div
+                          class="rounded-2xl bg-aliceblue-200 flex flex-row items-center justify-center py-0.5 px-2.5"
+                        >
+                          <div
+                            class="w-[63px] relative leading-[20px] font-medium inline-block min-w-[63px]"
+                          >
+                            Research
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-row items-start justify-start mix-blend-multiply text-firebrick"
+                      >
+                        <div
+                          class="rounded-2xl bg-seashell flex flex-row items-center justify-center py-0.5 px-2.5"
+                        >
+                          <div
+                            class="w-[83px] relative leading-[20px] font-medium inline-block min-w-[83px]"
+                          >
+                            Frameworks
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col items-start justify-start gap-[32px] max-w-full mq450:gap-[16px_32px]"
+                >
+                  <img
+                    class="self-stretch h-60 relative max-w-full overflow-hidden shrink-0 object-cover"
+                    alt=""
+                    src="/public/image-6@2x.png"
+                  />
+
+                  <div
+                    class="self-stretch flex flex-col items-start justify-start gap-[24px] max-w-full"
+                  >
+                    <div
+                      class="self-stretch flex flex-col items-start justify-start gap-[12px] max-w-full"
+                    >
+                      <div
+                        class="self-stretch relative leading-[20px] font-semibold"
+                      >
+                        Candice Wu • 1 Jan 2023
+                      </div>
+                      <div
+                        class="self-stretch flex flex-row items-start justify-start gap-[16px] max-w-full text-5xl text-gray1-100 mq450:flex-wrap"
+                      >
+                        <h2
+                          class="m-0 flex-1 relative text-inherit leading-[32px] font-semibold font-inherit inline-block min-w-[198px] max-w-full mq450:text-lgi mq450:leading-[26px]"
+                        >
+                          What is Wireframing?
+                        </h2>
+                        <div
+                          class="h-7 flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border"
+                        >
+                          <img
+                            class="w-6 h-6 relative overflow-hidden shrink-0"
+                            alt=""
+                            src="/public/arrowupright.svg"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch relative text-base leading-[24px] text-gray-500"
+                      >
+                        Introduction to Wireframing and its Principles. Learn
+                        from the best in the industry.
+                      </div>
+                    </div>
+                    <div
+                      class="self-stretch flex flex-row items-start justify-start py-0 pr-[226px] pl-0 gap-[8px] text-center mq450:flex-wrap mq450:pr-5 mq450:box-border"
+                    >
+                      <div
+                        class="flex flex-row items-start justify-start mix-blend-multiply"
+                      >
+                        <div
+                          class="rounded-2xl bg-ghostwhite-200 flex flex-row items-center justify-center py-0.5 px-2.5"
+                        >
+                          <div
+                            class="w-[47px] relative leading-[20px] font-medium inline-block min-w-[47px]"
+                          >
+                            Design
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-row items-start justify-start mix-blend-multiply text-darkblue"
+                      >
+                        <div
+                          class="rounded-2xl bg-aliceblue-200 flex flex-row items-center justify-center py-0.5 px-2.5"
+                        >
+                          <div
+                            class="w-[63px] relative leading-[20px] font-medium inline-block min-w-[63px]"
+                          >
+                            Research
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="hidden flex-row items-start justify-start mix-blend-multiply text-pink-700"
+                      >
+                        <div
+                          class="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5"
+                        >
+                          <div class="relative leading-[20px] font-medium">
+                            Presentation
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="self-stretch grid flex-row items-start justify-center gap-[32px] max-w-full grid-cols-[repeat(3,_minmax(288px,_1fr))] mq750:gap-[32px_16px] mq750:grid-cols-[minmax(288px,_1fr)] mq1050:justify-center mq1050:grid-cols-[repeat(2,_minmax(288px,_499px))]"
+              >
+                <div
+                  class="flex flex-col items-start justify-start gap-[32px] max-w-full mq450:gap-[16px_32px]"
+                >
+                  <img
+                    class="self-stretch h-60 relative max-w-full overflow-hidden shrink-0 object-cover"
+                    alt=""
+                    src="/public/image-7@2x.png"
+                  />
+
+                  <div
+                    class="self-stretch flex flex-col items-start justify-start gap-[24px] max-w-full"
+                  >
+                    <div
+                      class="self-stretch flex flex-col items-start justify-start gap-[12px] max-w-full"
+                    >
+                      <div
+                        class="self-stretch relative leading-[20px] font-semibold"
+                      >
+                        Natali Craig • 1 Jan 2023
+                      </div>
+                      <div
+                        class="self-stretch flex flex-row items-start justify-start gap-[16px] max-w-full text-5xl text-gray1-100 mq450:flex-wrap"
+                      >
+                        <h2
+                          class="m-0 flex-1 relative text-inherit leading-[32px] font-semibold font-inherit inline-block min-w-[224px] max-w-full mq450:text-lgi mq450:leading-[26px]"
+                        >
+                          How collaboration makes us better designers
+                        </h2>
+                        <div
+                          class="h-7 flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border"
+                        >
+                          <img
+                            class="w-6 h-6 relative overflow-hidden shrink-0"
+                            alt=""
+                            src="/public/arrowupright.svg"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch relative text-base leading-[24px] text-gray-500"
+                      >
+                        Collaboration can make our teams stronger, and our
+                        individual designs better.
+                      </div>
+                    </div>
+                    <div
+                      class="self-stretch flex flex-row items-start justify-start py-0 pr-[226px] pl-0 gap-[8px] text-center mq450:flex-wrap mq450:pr-5 mq450:box-border"
+                    >
+                      <div
+                        class="flex flex-row items-start justify-start mix-blend-multiply"
+                      >
+                        <div
+                          class="rounded-2xl bg-ghostwhite-200 flex flex-row items-center justify-center py-0.5 px-2.5"
+                        >
+                          <div
+                            class="w-[47px] relative leading-[20px] font-medium inline-block min-w-[47px]"
+                          >
+                            Design
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-row items-start justify-start mix-blend-multiply text-darkblue"
+                      >
+                        <div
+                          class="rounded-2xl bg-aliceblue-200 flex flex-row items-center justify-center py-0.5 px-2.5"
+                        >
+                          <div
+                            class="w-[63px] relative leading-[20px] font-medium inline-block min-w-[63px]"
+                          >
+                            Research
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="hidden flex-row items-start justify-start mix-blend-multiply text-pink-700"
+                      >
+                        <div
+                          class="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5"
+                        >
+                          <div class="relative leading-[20px] font-medium">
+                            Presentation
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col items-start justify-start gap-[32px] max-w-full mq450:gap-[16px_32px]"
+                >
+                  <img
+                    class="self-stretch h-60 relative max-w-full overflow-hidden shrink-0 object-cover"
+                    alt=""
+                    src="/public/image-8@2x.png"
+                  />
+
+                  <div
+                    class="self-stretch flex flex-col items-start justify-start gap-[24px] max-w-full"
+                  >
+                    <div
+                      class="self-stretch flex flex-col items-start justify-start gap-[12px] max-w-full"
+                    >
+                      <div
+                        class="self-stretch relative leading-[20px] font-semibold"
+                      >
+                        Drew Cano • 1 Jan 2023
+                      </div>
+                      <div
+                        class="self-stretch flex flex-row items-start justify-start gap-[16px] max-w-full text-5xl text-gray1-100 mq450:flex-wrap"
+                      >
+                        <h2
+                          class="m-0 flex-1 relative text-inherit leading-[32px] font-semibold font-inherit inline-block min-w-[197px] max-w-full mq450:text-lgi mq450:leading-[26px]"
+                        >
+                          Our top 10 Javascript frameworks to use
+                        </h2>
+                        <div
+                          class="h-7 flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border"
+                        >
+                          <img
+                            class="w-6 h-6 relative overflow-hidden shrink-0"
+                            alt=""
+                            src="/public/arrowupright.svg"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch relative text-base leading-[24px] text-gray-500"
+                      >
+                        JavaScript frameworks make development easy with
+                        extensive features and functionalities.
+                      </div>
+                    </div>
+                    <div
+                      class="self-stretch flex flex-row items-start justify-start py-0 pr-[84px] pl-0 gap-[8px] text-center text-seagreen mq450:flex-wrap mq450:pr-5 mq450:box-border"
+                    >
+                      <div
+                        class="flex flex-row items-start justify-start mix-blend-multiply"
+                      >
+                        <div
+                          class="rounded-2xl bg-honeydew flex flex-row items-center justify-center py-0.5 px-2.5 whitespace-nowrap"
+                        >
+                          <div
+                            class="w-[154px] relative leading-[20px] font-medium inline-block"
+                          >
+                            Software Development
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-row items-start justify-start mix-blend-multiply text-pink-700"
+                      >
+                        <div
+                          class="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5"
+                        >
+                          <div
+                            class="w-9 relative leading-[20px] font-medium inline-block min-w-[36px]"
+                          >
+                            Tools
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-row items-start justify-start mix-blend-multiply text-crimson"
+                      >
+                        <div
+                          class="rounded-2xl bg-lavenderblush flex flex-row items-center justify-center py-0.5 px-2.5"
+                        >
+                          <div
+                            class="w-[34px] relative leading-[20px] font-medium inline-block min-w-[34px]"
+                          >
+                            SaaS
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col items-start justify-start gap-[32px] max-w-full mq450:gap-[16px_32px]"
+                >
+                  <img
+                    class="self-stretch h-60 relative max-w-full overflow-hidden shrink-0 object-cover"
+                    alt=""
+                    src="/public/image-9@2x.png"
+                  />
+
+                  <div
+                    class="self-stretch flex flex-col items-start justify-start gap-[24px] max-w-full"
+                  >
+                    <div
+                      class="self-stretch flex flex-col items-start justify-start gap-[12px] max-w-full"
+                    >
+                      <div
+                        class="self-stretch relative leading-[20px] font-semibold"
+                      >
+                        Orlando Diggs • 1 Jan 2023
+                      </div>
+                      <div
+                        class="self-stretch flex flex-row items-start justify-start gap-[16px] max-w-full text-5xl text-gray1-100 mq450:flex-wrap"
+                      >
+                        <h2
+                          class="m-0 flex-1 relative text-inherit leading-[32px] font-semibold font-inherit inline-block min-w-[224px] max-w-full mq450:text-lgi mq450:leading-[26px]"
+                        >
+                          Podcast: Creating a better CX Community
+                        </h2>
+                        <div
+                          class="h-7 flex flex-col items-start justify-start pt-1 px-0 pb-0 box-border"
+                        >
+                          <img
+                            class="w-6 h-6 relative overflow-hidden shrink-0"
+                            alt=""
+                            src="/public/arrowupright.svg"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch relative text-base leading-[24px] text-gray-500"
+                      >
+                        Starting a community doesn’t need to be complicated, but
+                        how do you get started?
+                      </div>
+                    </div>
+                    <div
+                      class="self-stretch flex flex-row items-start justify-start py-0 pr-[147px] pl-0 gap-[8px] text-center mq450:flex-wrap mq450:pr-5 mq450:box-border"
+                    >
+                      <div
+                        class="flex flex-row items-start justify-start mix-blend-multiply"
+                      >
+                        <div
+                          class="rounded-2xl bg-ghostwhite-200 flex flex-row items-center justify-center py-0.5 px-2.5"
+                        >
+                          <div
+                            class="w-[63px] relative leading-[20px] font-medium inline-block min-w-[63px]"
+                          >
+                            Podcasts
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-row items-start justify-start mix-blend-multiply text-darkslateblue"
+                      >
+                        <div
+                          class="rounded-2xl bg-ghostwhite-100 flex flex-row items-center justify-center py-0.5 px-2.5 whitespace-nowrap"
+                        >
+                          <div
+                            class="w-[126px] relative leading-[20px] font-medium inline-block min-w-[126px]"
+                          >
+                            Customer Success
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="hidden flex-row items-start justify-start mix-blend-multiply text-pink-700"
+                      >
+                        <div
+                          class="rounded-2xl bg-pink-50 flex flex-row items-center justify-center py-0.5 px-2.5"
+                        >
+                          <div class="relative leading-[20px] font-medium">
+                            Presentation
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="self-stretch flex flex-row items-start justify-between pt-[20.5px] px-0 pb-[0.5px] gap-[20px] text-sm text-gray-500 border-t-[1px] border-solid border-whitesmoke mq750:flex-wrap"
+          >
+            <div
+              class="h-[30px] flex flex-col items-start justify-start pt-2.5 px-0 pb-0 box-border"
+            >
+              <div
+                class="flex-1 flex flex-row items-start justify-start gap-[8px]"
+              >
+                <img
+                  class="h-5 w-5 relative overflow-hidden shrink-0 min-h-[20px]"
+                  loading="lazy"
+                  alt=""
+                  src="/public/arrowleft.svg"
+                />
+
+                <div
+                  class="relative leading-[20px] font-medium inline-block min-w-[58px]"
+                >
+                  Previous
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex flex-row items-start justify-start gap-[2px] text-center"
+            >
+              <div
+                class="rounded-lg bg-ghostwhite-200 overflow-hidden flex flex-row items-start justify-start text-primary-600"
+              >
+                <div
+                  class="rounded-lg flex flex-row items-start justify-start py-2.5 px-[16.5px]"
+                >
+                  <div
+                    class="w-[7px] relative leading-[20px] font-medium inline-block min-w-[7px]"
+                  >
+                    1
+                  </div>
+                </div>
+              </div>
+              <div
+                class="rounded-lg overflow-hidden flex flex-row items-start justify-start"
+              >
+                <div
+                  class="rounded-lg flex flex-row items-start justify-start py-2.5 px-[15.5px]"
+                >
+                  <div
+                    class="w-[9px] relative leading-[20px] font-medium inline-block min-w-[9px]"
+                  >
+                    2
+                  </div>
+                </div>
+              </div>
+              <div
+                class="rounded-lg overflow-hidden flex flex-row items-start justify-start"
+              >
+                <div
+                  class="rounded-lg flex flex-row items-start justify-start py-2.5 px-[15px]"
+                >
+                  <div
+                    class="w-2.5 relative leading-[20px] font-medium inline-block min-w-[10px]"
+                  >
+                    3
+                  </div>
+                </div>
+              </div>
+              <div
+                class="rounded-lg overflow-hidden flex flex-row items-start justify-start"
+              >
+                <div
+                  class="rounded-lg flex flex-row items-start justify-start py-2.5 px-3.5"
+                >
+                  <div
+                    class="w-3 relative leading-[20px] font-medium inline-block min-w-[12px]"
+                  >
+                    ...
+                  </div>
+                </div>
+              </div>
+              <div
+                class="rounded-lg overflow-hidden flex flex-row items-start justify-start"
+              >
+                <div
+                  class="rounded-lg flex flex-row items-start justify-start py-2.5 px-[15.5px]"
+                >
+                  <div
+                    class="w-[9px] relative leading-[20px] font-medium inline-block min-w-[9px]"
+                  >
+                    8
+                  </div>
+                </div>
+              </div>
+              <div
+                class="rounded-lg overflow-hidden flex flex-row items-start justify-start"
+              >
+                <div
+                  class="rounded-lg flex flex-row items-start justify-start py-2.5 px-[15.5px]"
+                >
+                  <div
+                    class="w-[9px] relative leading-[20px] font-medium inline-block min-w-[9px]"
+                  >
+                    9
+                  </div>
+                </div>
+              </div>
+              <div
+                class="rounded-lg overflow-hidden flex flex-row items-start justify-start"
+              >
+                <div
+                  class="rounded-lg flex flex-row items-start justify-start py-2.5 px-3"
+                >
+                  <div
+                    class="w-4 relative leading-[20px] font-medium inline-block min-w-[16px]"
+                  >
+                    10
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-[30px] flex flex-col items-start justify-start pt-2.5 px-0 pb-0 box-border"
+            >
+              <div
+                class="flex-1 flex flex-row items-start justify-start gap-[8px]"
+              >
+                <div
+                  class="relative leading-[20px] font-medium inline-block min-w-[32px]"
+                >
+                  Next
+                </div>
+                <img
+                  class="h-5 w-5 relative overflow-hidden shrink-0 min-h-[20px]"
+                  loading="lazy"
+                  alt=""
+                  src="/public/arrowright.svg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="self-stretch bg-white flex flex-col items-center justify-center py-[30px] px-5 box-border max-w-full text-left text-xl text-gray1-100 font-text-sm-medium mq750:gap-[32px_64px] mq450:gap-[16px_64px]"
+      >
+        <div
+          class="flex flex-row items-start justify-center py-0 pr-[655px] pl-0 box-border gap-[14px] max-w-full lg:flex-wrap lg:pr-[327px] lg:box-border mq750:pr-[163px] mq750:box-border mq450:pr-5 mq450:box-border"
+        >
+          <div
+            class="relative leading-[24px] inline-block min-w-[74px] mq450:text-base mq450:leading-[19px]"
+          >
+            © 2023
+          </div>
+          <div
+            class="flex flex-row items-start justify-start gap-[14px] max-w-full mq750:flex-wrap"
+          >
+            <h3
+              class="m-0 relative text-inherit leading-[24px] font-normal font-inherit inline-block min-w-[67px] mq450:text-base mq450:leading-[19px]"
+            >
+              Twitter
+            </h3>
+            <h3
+              class="m-0 relative text-inherit leading-[24px] font-normal font-inherit inline-block min-w-[80px] mq450:text-base mq450:leading-[19px]"
+            >
+              LinkedIn
+            </h3>
+            <h3
+              class="m-0 relative text-inherit leading-[24px] font-normal font-inherit inline-block min-w-[51px] mq450:text-base mq450:leading-[19px]"
+            >
+              Email
+            </h3>
+            <h3
+              class="m-0 relative text-inherit leading-[24px] font-normal font-inherit inline-block min-w-[87px] mq450:text-base mq450:leading-[19px]"
+            >
+              RSS feed
+            </h3>
+            <h3
+              class="m-0 relative text-inherit leading-[24px] font-normal font-inherit mq450:text-base mq450:leading-[19px]"
+            >
+              Add to Feedly
+            </h3>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
