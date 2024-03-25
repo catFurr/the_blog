@@ -1,0 +1,28 @@
+---
+
+import CommonHead from '@components/CommonHead.astro'
+import Header from "@components/Header.astro"
+import Footer from "@components/Footer.astro"
+
+import { Content } from '@assets/portfolio.md';
+---
+
+<html lang="en">
+    <head>
+        <CommonHead />
+    </head>
+
+	<body background="bg-topography.svg" bgcolor="#FFFFFF" class="px-44">
+		<Header />
+        <div class="my-10 py-5 border-y-2 border-gray-400 text-center">
+			<h1 class="text-9xl font-bold text-black dark:text-white">
+				John Doe
+			</h1>
+		</div>
+
+        <div class="prose lg:prose-xl" >
+            <Content />
+        </div>
+        <Footer />
+    </body>
+</html>

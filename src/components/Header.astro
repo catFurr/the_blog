@@ -6,15 +6,37 @@ import githubSvg from '@assets/github-mark.svg'
 
 ---
 
+<script>
+    window.onload = function() {
+        var toggle = document.getElementById('darkmodetoggle');
+        var htmlHead = document.getElementsByTagName('body')[0];
+        var sunicon = document.getElementById('sunicon');
+        var moonicon = document.getElementById('moonicon');
+        if (!toggle) return
+        toggle.onclick = function() {
+            if (!sunicon) return
+            if (!moonicon) return
+            if (htmlHead.classList.contains("dark")) {
+                htmlHead.classList.remove("dark");
+                sunicon.classList.remove("hidden");
+                moonicon.classList.add("hidden");
+            } else {
+                htmlHead.classList.add("dark");
+                moonicon.classList.remove("hidden");
+                sunicon.classList.add("hidden");
+            }
+        }
+    }
+</script>
 
 <header class="w-full my-10 font-inter text-lg">
     <div class="flex items-center">
         <div class="grow">by catfurr</div>
         <div class="flex gap-8 text-slate-500 items-center">
-            <a href="#" data-astro-prefetch>Blog</a>
-            <a href="#" data-astro-prefetch>Projects</a>
-            <a href="#" data-astro-prefetch>Portfolio</a>
-            <a href="#" data-astro-prefetch>Contact</a>
+            <a href="/" data-astro-prefetch>Blog</a>
+            <a href="/projects" data-astro-prefetch>Projects</a>
+            <a href="/portfolio" data-astro-prefetch>Portfolio</a>
+            <a href="/contact" data-astro-prefetch>Contact</a>
             <!-- <a href="https://github.com/">
                 <Image src={githubSvg} alt="github icon" class="w-6" >
             </a> -->

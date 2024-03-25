@@ -4,10 +4,9 @@ import CommonHead from '@components/CommonHead.astro'
 import PostCard from "@components/PostCard.astro";
 import Header from "@components/Header.astro"
 import Footer from "@components/Footer.astro"
-import GridPostCards from "@components/GridPostCards.astro"
 
 import { getCollection } from "astro:content";
-const allBlogPosts = await getCollection("blog");
+const allProjects = await getCollection("projects");
 
 ---
 
@@ -15,31 +14,34 @@ const allBlogPosts = await getCollection("blog");
     <head>
         <CommonHead />
     </head>
+
 	<body background="bg-topography.svg" bgcolor="#FFFFFF" class="px-44">
 		<Header />
+
         <div class="my-10 py-5 border-y-2 border-gray-400 text-center">
 			<h1 class="text-9xl font-bold text-black dark:text-white">
-				THE BLOG
+				PROJECTS
 			</h1>
 		</div>
 
         <div class="blog">
             <div class="my-8">
-                <div class="text-xl mb-4 font-bold">Recent blog posts</div>
-                <div class="grid grid-rows-2 grid-flow-col gap-6">
-					<div class="row-span-2">
-						<PostCard post={allBlogPosts[0]} />
-					</div>
-                    <PostCard post={ allBlogPosts[1] } direction="row" />
-					<PostCard post={ allBlogPosts[2] } direction="row" />
+                <div class="text-xl mb-4 font-bold">List Project</div>
+                <div class="grid grid-cols-2 grid-flow-col gap-6">
+                    <PostCard post={ allProjects[0] } />
+					<PostCard post={ allProjects[1] } />
                 </div>
             </div>
 
-            <div class="section2">
-                <PostCard post={ allBlogPosts[3] } direction="row" />
+            <PostCard post={ allProjects[2] } />
+
+            <div class="my-8">
+                <div class="grid grid-cols-2 grid-flow-col gap-6">
+                    <PostCard post={ allProjects[3] } />
+					<PostCard post={ allProjects[4] } />
+                </div>
             </div>
 
-            <GridPostCards />
         </div>
 
         <Footer />
